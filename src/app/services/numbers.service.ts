@@ -9,10 +9,10 @@ import { Api } from '../models/message'
 export class NumbersService {
 
   gameUrl: string = "http://localhost:3000/api/number"
-  
+
   constructor(private http:HttpClient) { }
 
-  game(): Observable<Api>{
-    return this.http.get<Api>(`${this.gameUrl}`)
+  game(id:number): Observable<Api>{
+    return this.http.get<Api>(`${this.gameUrl}/${id}`)
   }
 }

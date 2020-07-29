@@ -22,7 +22,7 @@
     style="display: flex; justify-content: center; align-items: center;"
     class="modal-box"
   >
-    <h1 class="title">
+    <h1 [ngClass]="answer ? 'has-text-link-dark':'has-text-danger'" class="title">
       {{ message }}
     </h1>
     <h1 *ngIf="!message" class="title">

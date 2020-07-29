@@ -1,3 +1,4 @@
 export interface Api {
-    message:string
+    message:string,
+    answer:boolean
 }
