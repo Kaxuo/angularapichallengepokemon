@@ -37,5 +37,5 @@ jobs:
       - name: Dependencies
         run : npm install
         
-      - name: Cypress
-        run : npm run end
+      - name: Unit testing
+        run : npm run test
