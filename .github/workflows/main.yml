@@ -39,7 +39,7 @@ jobs:
         run: npm run test
 
       - name: Load Server
-        run: ng serve
+        run: npm run start
 
       - name: Cypress run
         uses: cypress-io/github-action@v2
