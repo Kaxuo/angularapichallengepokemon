@@ -10,7 +10,17 @@
   <table class="table">
     <thead>
       <tr>
-        <ng-container *ngTemplateOutlet="rowTitle"></ng-container>
+        <th class="ID"><abbr title="Position">ID</abbr></th>
+        <th class="Picture">Picture</th>
+        <th class="Name"><abbr title="Name">Name</abbr></th>
+        <th class="HP"><abbr title="HP">HP</abbr></th>
+        <th class="Attack"><abbr title="Attack">Attack</abbr></th>
+        <th class="Defense"><abbr title="Defense">Defense</abbr></th>
+        <th class="SAtck"><abbr title="S.Attack">S.Atk</abbr></th>
+        <th class="SDef"><abbr title="S.def">S.Def</abbr></th>
+        <th class="Speed"><abbr title="Speed">Speed</abbr></th>
+        <th class="Ability"><abbr title="Ability">Ability</abbr></th>
+        <th class="Type"><abbr title="Types">Type(s)</abbr></th>
       </tr>
     </thead>
     <tbody *ngIf="pokemons">
@@ -45,7 +55,7 @@
       </tr>
     </tbody>
     <tr *ngIf="pokemons" style="text-align: center;">
-      <ng-container *ngTemplateOutlet="rowTitle"></ng-container>
+      <ng-container></ng-container>
     </tr>
   </table>
 </div>
