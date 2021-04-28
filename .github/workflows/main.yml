@@ -42,4 +42,4 @@ jobs:
         run: npm run build
 
       - name: Cypress run
-        uses: npm run ci:cy-run
+        uses: npm run all
