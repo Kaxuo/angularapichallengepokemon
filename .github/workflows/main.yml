@@ -38,8 +38,5 @@ jobs:
       - name: Unit testing
         run: npm run test
 
-      - name: Load Server
-        run: npm run start
-
       - name: Cypress run
         uses: cypress-io/github-action@v2
