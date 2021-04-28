@@ -5,13 +5,16 @@
     "ng": "ng",
     "cyp": "cypress open",
     "end": "cypress run",
+    "cy:run": "cypress run",
     "google": "cypress run --browser chrome ",
     "start": "ng serve",
     "build": "ng build",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "test": "jest",
-    "test-watch": "jest --watch"
+    "test-watch": "jest --watch",
+    "ci:start-server": "angular-http-server --path ./dist/Challenge -p 4200",
+    "ci:cy-run": "start-server-and-test ci:start-server http://localhost:4200 cy:run"
   },
   "private": true,
   "dependencies": {
@@ -40,6 +43,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/jest": "^26.0.22",
     "@types/node": "^12.11.1",
+    "angular-http-server": "^1.10.0",
     "codelyzer": "^5.1.2",
     "cypress": "^7.1.0",
     "jasmine-core": "~3.5.0",
@@ -47,6 +51,7 @@
     "jest": "^26.6.3",
     "jest-preset-angular": "^8.4.0",
     "protractor": "~5.4.3",
+    "start-server-and-test": "^1.12.1",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
     "typescript": "~3.7.5"
