@@ -14,7 +14,7 @@
     "test": "jest",
     "test-watch": "jest --watch",
     "ci:start-server": "angular-http-server --path ./dist/Challenge -p 4200",
-    "ci:cy-run": "start-server-and-test ci:start-server http://localhost:4200 cy:run"
+    "all": "start-server-and-test ci:start-server http://localhost:4200 cy:run"
   },
   "private": true,
   "dependencies": {
