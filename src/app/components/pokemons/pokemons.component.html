@@ -4,9 +4,11 @@
   <h1>List of Pokémons</h1>
   <br />
   <h1 class="game" routerLink="/game">Automatic Guessing Game</h1>
+  <br />
+  <h1 class="game" routerLink="/eID">eID</h1>
 </div>
 <app-spinner *ngIf="!pokemons && !errorMessage"></app-spinner>
-<div style="display: flex; justify-content: center; align-items: center;">
+<div style="display: flex; justify-content: center; align-items: center">
   <table class="table">
     <thead>
       <tr>
@@ -45,7 +47,7 @@
         </td>
         <td class="Type">
           <p
-            style="display: flex; flex-direction: column;"
+            style="display: flex; flex-direction: column"
             class="{{ type.type.name | typecolors }}"
             *ngFor="let type of item.pokemon.types"
           >
@@ -54,7 +56,7 @@
         </td>
       </tr>
     </tbody>
-    <tr *ngIf="pokemons" style="text-align: center;">
+    <tr *ngIf="pokemons" style="text-align: center">
       <ng-container></ng-container>
     </tr>
   </table>

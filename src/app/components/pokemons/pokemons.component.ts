@@ -1,3 +1,4 @@
+///<reference types="chrome"/>
 import { Component, OnInit } from "@angular/core";
 import { DataService } from "src/app/services/data.service";
 import { map, switchMap, catchError, take } from "rxjs/operators";
@@ -16,7 +17,6 @@ export class PokemonsComponent implements OnInit {
   singlePokemon: Array<Pokemon>;
 
   constructor(private pokemonService: DataService) {}
-
   ngOnInit(): void {
     this.pokemonService
       // Get All Data

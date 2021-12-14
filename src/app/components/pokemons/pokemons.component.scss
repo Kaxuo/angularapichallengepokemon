@@ -1,4 +1,5 @@
 .top-bar {
+  margin-top: 20px;
   height: 100px;
   display: flex;
   flex-direction: column;
@@ -13,18 +14,18 @@
     text-transform: uppercase;
     outline: none;
   }
-  .game{
+  .game {
     cursor: pointer;
-    transition:transform 0.2s ease;
-    &:hover{
-      transform:scale(1.2)
+    transition: transform 0.2s ease;
+    &:hover {
+      transform: scale(1.2);
     }
   }
 }
 
 .table {
   width: 80%;
-  height:100%;
+  height: 100%;
   margin: 50px;
   thead {
     background-color: #ebebe5;
@@ -37,36 +38,36 @@
       vertical-align: middle;
       font-size: 15px;
       font-family: Lato;
-      padding:0.5em 0px;
+      padding: 0.5em 0px;
     }
-    .ID{
-        background-color: #EBD69D;
+    .ID {
+      background-color: #ebd69d;
     }
-    .Name{
-        font-weight: bold;
-        text-transform: uppercase;
+    .Name {
+      font-weight: bold;
+      text-transform: uppercase;
     }
-    .HP{
-        color:#a731b7
+    .HP {
+      color: #a731b7;
     }
-    .Attack{
-        color:#F08030;
+    .Attack {
+      color: #f08030;
     }
-    .Defense{
-        color:#586cad;
+    .Defense {
+      color: #586cad;
     }
-    .SAtck{
-        color:#6890F0;
+    .SAtck {
+      color: #6890f0;
     }
-    .SDef{
-        color:#78C850;
+    .SDef {
+      color: #78c850;
     }
-    .Speed{
-        color:#F85888;
+    .Speed {
+      color: #f85888;
     }
-    .Ability{
-        font-style:italic;
-        text-decoration: underline;
+    .Ability {
+      font-style: italic;
+      text-decoration: underline;
     }
   }
 }
@@ -74,8 +75,8 @@
 @media only screen and (max-width: 700px) {
   .table {
     margin: 0px;
-    width:100%;
-    overflow:hidden;
+    width: 100%;
+    overflow: hidden;
     .ID,
     .HP,
     .Attack,
@@ -90,7 +91,7 @@
 
 @media only screen and (max-width: 450px) {
   .table {
-    .img{
+    .img {
       width: 50px;
       height: 50px;
     }
