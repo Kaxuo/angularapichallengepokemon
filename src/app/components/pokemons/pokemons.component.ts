@@ -1,14 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/services/data.service'
-import {
-  map,
-  switchMap,
-  catchError,
-  take,
-} from 'rxjs/operators';
-import { forkJoin, throwError } from 'rxjs';
-import { Pokemon } from 'src/app/models/pokemon';
-import { Pokedex } from 'src/app/models/pokedex';
+///<reference types="chrome"/>
+import { Component, OnInit } from "@angular/core";
+import { DataService } from "src/app/services/data.service";
+import { map, switchMap, catchError, take } from "rxjs/operators";
+import { forkJoin, throwError } from "rxjs";
+import { Pokemon } from "src/app/models/pokemon";
+import { Pokedex } from "src/app/models/pokedex";
 
 @Component({
   selector: "app-pokemons",
@@ -18,9 +14,9 @@ import { Pokedex } from 'src/app/models/pokedex';
 export class PokemonsComponent implements OnInit {
   pokemons: Pokedex;
   errorMessage: string;
+  singlePokemon: Array<Pokemon>;
 
   constructor(private pokemonService: DataService) {}
-
   ngOnInit(): void {
     this.pokemonService
       // Get All Data
@@ -38,7 +34,7 @@ export class PokemonsComponent implements OnInit {
         }),
         switchMap((data) => {
           return forkJoin(
-            ...data.results.map((item) =>
+            data.results.map((item) =>
               this.pokemonService.getSinglePokemon(item.id).pipe(
                 map((pokemon: Pokemon) => {
                   return { ...item, pokemon };
@@ -52,13 +48,24 @@ export class PokemonsComponent implements OnInit {
           );
         }),
         catchError((err) => {
-          this.errorMessage = 'an error occured';
-          return throwError(err)
+          this.errorMessage = "an error occured";
+          return throwError(err);
         }),
-        take(1),
+        take(1)
       )
       .subscribe((data) => {
-          this.pokemons = data;
-        });
+        this.pokemons = data;
+        console.log(data);
+      });
   }
+
+  sum = (a, b) => {
+    return a + b;
+  };
+
+  createUser = () => {
+    const user = { firstName: "Nguyen" };
+    user["lastName"] = "Hoang";
+    return user;
+  };
 }

@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+.con {
+  text-align: center;
+  .fas {
+    padding-top: 14px;
+    font-size: 5rem;
+  }
+}
+
+.page {
+  background-color: white;
+  min-height: 100vh;
+  max-height: 500vh;
+}
+
+.photo {
+  filter: blur(15px);
+}

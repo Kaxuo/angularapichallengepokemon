@@ -1,0 +1,23 @@
+<div class="page">
+  <div class="container">
+    <button class="button is-danger" (click)="check()">Click to connect</button>
+  </div>
+  <div class="con">
+    <h1 class="is-size-3">{{ message }}</h1>
+    <i *ngIf="message == 'Starting point'" class="fas fa-arrow-circle-up"></i>
+    <i *ngIf="
+        message ==
+        'You are not logged in from the extension , please use the extension and your code pin to log in !'
+      " class="fas fa-exclamation-triangle"></i>
+    <div *ngIf="
+        message == 'You are logged in from the extension ! Good work' &&
+        dataID != true
+      ">
+      <i class="fas fa-child"></i>
+      <div *ngFor="let item of dataID | keyvalue">
+        <strong>{{ item.key }}</strong> - <small style="word-wrap: break-word">{{ item.value }}</small>
+      </div>
+    </div>
+    <img class="photo" *ngIf="image && message == 'You are logged in from the extension ! Good work'" [src]="image" alt="photo" />
+  </div>
+</div>

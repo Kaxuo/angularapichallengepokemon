@@ -19,6 +19,10 @@ export class DataService {
     return this.http.get<Pokedex>(`${this.pokemonUrl}`);
   }
 
+  getUser(): Observable<any> {
+    return this.http.get<any>("https://jsonplaceholder.typicode.com/users/1");
+  }
+
   getSinglePokemon(id: string): Observable<Pokemon> {
     return this.http.get<Pokemon>(`${this.singlePokemonUrl}/${id}`);
   }

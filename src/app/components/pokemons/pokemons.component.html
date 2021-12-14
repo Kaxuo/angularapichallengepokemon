@@ -4,13 +4,25 @@
   <h1>List of Pokémons</h1>
   <br />
   <h1 class="game" routerLink="/game">Automatic Guessing Game</h1>
+  <br />
+  <h1 class="game" routerLink="/eID">eID</h1>
 </div>
 <app-spinner *ngIf="!pokemons && !errorMessage"></app-spinner>
-<div style="display: flex; justify-content: center; align-items: center;">
+<div style="display: flex; justify-content: center; align-items: center">
   <table class="table">
     <thead>
       <tr>
-        <ng-container *ngTemplateOutlet="rowTitle"></ng-container>
+        <th class="ID"><abbr title="Position">ID</abbr></th>
+        <th class="Picture">Picture</th>
+        <th class="Name"><abbr title="Name">Name</abbr></th>
+        <th class="HP"><abbr title="HP">HP</abbr></th>
+        <th class="Attack"><abbr title="Attack">Attack</abbr></th>
+        <th class="Defense"><abbr title="Defense">Defense</abbr></th>
+        <th class="SAtck"><abbr title="S.Attack">S.Atk</abbr></th>
+        <th class="SDef"><abbr title="S.def">S.Def</abbr></th>
+        <th class="Speed"><abbr title="Speed">Speed</abbr></th>
+        <th class="Ability"><abbr title="Ability">Ability</abbr></th>
+        <th class="Type"><abbr title="Types">Type(s)</abbr></th>
       </tr>
     </thead>
     <tbody *ngIf="pokemons">
@@ -35,7 +47,7 @@
         </td>
         <td class="Type">
           <p
-            style="display: flex; flex-direction: column;"
+            style="display: flex; flex-direction: column"
             class="{{ type.type.name | typecolors }}"
             *ngFor="let type of item.pokemon.types"
           >
@@ -44,8 +56,8 @@
         </td>
       </tr>
     </tbody>
-    <tr *ngIf="pokemons" style="text-align: center;">
-      <ng-container *ngTemplateOutlet="rowTitle"></ng-container>
+    <tr *ngIf="pokemons" style="text-align: center">
+      <ng-container></ng-container>
     </tr>
   </table>
 </div>

@@ -12,4 +12,5 @@ export interface Pokemon {
       };
   }>;
   types: Array<{type: { name: string}}>;
+  loading:boolean
 }
